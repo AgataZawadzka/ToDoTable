@@ -1,0 +1,45 @@
+# ToDoTable
+
+Wprowadzenie
+
+Celem tego dokumentu jest opisanie projektu aplikacji webowej, która będzie umożliwiała zarządzanie zadaniami. Aplikacja ta będzie umożliwiać posiadanie własnych tablic przez użytkowników, na których będą mogli dodać nowe zadania i je edytować.
+
+Cele projektu
+
+    - Stworzenie aplikacji webowej, która umożliwia zarządzanie zadaniami.
+    - Zapewnienie intuicyjnego interfejsu użytkownika, który pozwala użytkownikom tworzyć, edytować i przenosić karty z zadaniami między różnymi kolumnami.
+    - Umożliwienie użytkownikom logowania się i tworzenia kont.
+
+
+Architektura systemu
+
+Frontend
+
+    - Wykorzystanie frameworka JavaScript (React) do budowy interfejsu użytkownika.
+    - Użycie HTML i CSS do renderowania treści i stylizacji aplikacji.
+
+Backend
+
+    - Zabezpieczenie danych użytkowników za pomocą autoryzacji.
+
+Baza danych
+
+    - Baza danych Firestore oferowana przez usługę Frirebase do przechowywania danych o użytkownikach i kart.
+
+Funkcje aplikacji
+
+    Tworzenie tablic
+    Tworzenie kolumn w ramach tablicy.
+    Tworzenie, edytowanie i usuwanie kart w kolumnach.
+    Przenoszenie kart między kolumnami.
+    System kont użytkowników, w tym rejestracja, logowanie i zarządzanie kontem.
+
+Interfejs użytkownika
+
+    Interfejs oparty na kolumnach i kartach, podobny do Trello.
+    Przyjazny dla użytkownika design, z prostą nawigacją.
+    Wizualizacja statusu projektów za pomocą kolorów i etykiet.
+
+Podsumowanie
+
+Ten design doc stanowi plan projektu aplikacji webowej do zarządzania projektami, podobnej do Trello. Obejmuje on architekturę, cele, funkcje i interfejs użytkownika.
