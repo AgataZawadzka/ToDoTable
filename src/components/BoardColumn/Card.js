@@ -5,9 +5,9 @@ const Card = (props) => {
     const {card} = props;
     return (
         <>
-            <li className="card-item">
-                {card.title}
-            </li>
+            <div className="card-item">
+                <p>{card.title}</p>
+            </div>
         </>
     )
 
