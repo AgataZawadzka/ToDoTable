@@ -2,15 +2,26 @@ import React from "react";
 import Column from "./Column.js";
 import './Board.scss';
 import { initData } from '../../actions/initData';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import _ from 'lodash';
 import {mapOrder} from '../sorts.js';
 import { Container, Draggable } from "react-smooth-dnd";
 import { applyDrag } from "../dragDrop.js";
+import { v4 as uuidv4 } from 'uuid';
 
 const Board = () => {
     const [board, setBoard] = useState({});
     const [columns, setColumns] = useState([]);
+
+    const [isShowAddColumn, setIsShowAddColumn] = useState(false);
+    const inputRef = useRef(null);
+    const [valueInput, setValueInput] = useState("");
+
+    useEffect(() => {
+        if(isShowAddColumn === true && inputRef && inputRef.current){
+            inputRef.current.focus();
+        }
+    }, []);
 
     useEffect(() => {
         const boardInitData = initData.boards.find(item => item.id === 'board-1')
@@ -56,6 +67,27 @@ const Board = () => {
         )
     }
 
+    const handleAddColumn = () => {
+        if(!valueInput){
+            if(inputRef && inputRef.current)
+                inputRef.current.focus();
+            return;
+        }
+
+        const _columns = _.cloneDeep(columns);
+        _columns.push({
+            id: uuidv4(),
+            boardId: board.id,
+            title: valueInput,
+            cards: []
+        });
+
+        setColumns(_columns);
+        setValueInput("");
+        inputRef.current.focus();
+
+    } 
+
     return (
         <>
             <div class="columns">
@@ -84,10 +116,25 @@ const Board = () => {
                     )
                 })}
 
-                <div className="add-new-column">
-                    <i className="fa fa-plus icon"></i> Dodaj kolejną kolumne
-                </div>
-
+                {isShowAddColumn === false ? 
+                        <div className="add-new-column" onClick={() => setIsShowAddColumn(true)}>
+                        <i className="fa fa-plus icon"></i> Dodaj kolejną kolumne
+                    </div>
+                    :
+                    <div className="content-add-column">
+                        <input type="text" 
+                            className="form-control" 
+                            placeholder="Nazwa kolumny" 
+                            ref={inputRef}
+                            value={valueInput}
+                            onChange={(event)=> setValueInput(event.target.value)}
+                        />
+                        <div>
+                        <button className="add-button" onClick={() => handleAddColumn()}>Dodaj</button>
+                        <i className="fa fa-times close"onClick={() => setIsShowAddColumn(false)}/>
+                        </div>
+                    </div>
+                }
             </Container>
             </div>
         </>

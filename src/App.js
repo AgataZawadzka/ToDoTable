@@ -4,7 +4,7 @@ import Board from './components/BoardColumn/Board';
 
 function App() {
   return (
-    <div className="container">
+    <div className="main-container">
       <nav className='header'>
           <img src={logo} alt="Logo" width='300px'/>
       </nav>

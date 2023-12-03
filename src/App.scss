@@ -16,14 +16,14 @@ body {
   padding: 15px 50px;  
 }
 
-.container{
+.main-container{
   height: 100vh;
   display: grid;
   grid-template-rows: 80px 50px 1fr;
 }
 
 .board{
-  height: calc(100vh - 180px);
+  height: calc(100vh - 80px);
   background-color: #4297ca;
   padding: 50px;
 }
