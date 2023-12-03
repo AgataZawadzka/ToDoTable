@@ -7,7 +7,7 @@ export const initData = {
                 {
                     id: 'column-1',
                     boardId: 'borad-1',
-                    title: 'Todo',
+                    title: 'Do zrobienia',
                     cardOrder: [ 'card-1', 'card-2', 'card-3' ],
                     cards: [
                         {
@@ -33,7 +33,7 @@ export const initData = {
                 {
                     id: 'column-2',
                     boardId: 'borad-1',
-                    title: 'In progress',
+                    title: 'W trakcie realizacji',
                     cardOrder: [ 'card-4', 'card-5', 'card-6', 'card-7' ],
                     cards: [
                         {
@@ -100,7 +100,7 @@ export const initData = {
                 {
                     id: 'column-3',
                     boardId: 'borad-1',
-                    title: 'Done',
+                    title: 'Ukończone',
                     cardOrder: [ 'card-8', 'card-9' ],
                     cards: [
                         {
