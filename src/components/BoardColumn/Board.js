@@ -4,6 +4,7 @@ import './Board.scss';
 import { initData } from '../../actions/initData';
 import { useState, useEffect } from "react";
 import _ from 'lodash';
+import {mapOrder} from '../sorts.js';
 
 const Board = () => {
     const [board, setBoard] = useState({});
@@ -14,9 +15,8 @@ const Board = () => {
         if(boardInitData){
             setBoard(boardInitData);
 
-            boardInitData.columns.sort((a,b) =>
-                boardInitData.columnOrder.indexOf(a.id) - boardInitData.columnOrder.indexOf(b.id))
-            setColumns(boardInitData.columns)
+
+            setColumns(mapOrder(boardInitData.columns, boardInitData.columnOrder, 'id'))
         }
     }, []);
 

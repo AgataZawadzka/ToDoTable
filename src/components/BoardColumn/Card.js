@@ -1,20 +1,13 @@
 import React from "react";
 import './Board.scss';
 
-const Card = () => {
+const Card = (props) => {
+    const {card} = props;
     return (
         <>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
-            <li className="card-item">Zadanie 1</li>
+            <li className="card-item">
+                {card.title}
+            </li>
         </>
     )
 
