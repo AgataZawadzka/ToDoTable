@@ -7,6 +7,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import ConfirmModal from "../Common/Modal";
 import Form from 'react-bootstrap/Form';
 import { MODAL_ACTION_CLOSE, MODAL_ACTION_CONFIRM } from '../constant';
+import { v4 as uuidv4 } from 'uuid';
 
 const Column = (props) => {
 
@@ -21,6 +22,16 @@ const Column = (props) => {
 
     const [isFirstClick, setIsFirstClick] = useState(true);
     const inputRef = useRef(null);
+
+    const [isShowAddNewCard, setIsShowAddNewCard] = useState(false);
+    const [valuetextArea, setValueTextArea] = useState("");
+    const textAreaRef = useRef(null);
+
+    useEffect(()=> {
+        if(isShowAddNewCard === true && textAreaRef && textAreaRef.current){
+            textAreaRef.current.focus();
+        }
+    }, [isShowAddNewCard])
 
     useEffect(() => {
         if(column && column.title){
@@ -66,6 +77,29 @@ const Column = (props) => {
         
     }
 
+    const handleAddNewCard = () => {
+        if(!valuetextArea) {
+            textAreaRef.current.focus();
+            return;
+        }
+
+        const newCard = {
+            id: uuidv4(),
+            boardId: column.boardId,
+            columnId: column.id,
+            title: valuetextArea
+        }
+
+        let newColumn = { ...column};
+        newColumn.cards = [...newColumn.cards, newCard];
+        newColumn.cardOrder = newColumn.cards.map(card => card.id);
+
+        onUpdateColumn(newColumn);
+        setValueTextArea("");
+        setIsShowAddNewCard(false);
+
+    }
+
     return (
         <>
                 <div className='column'>
@@ -90,9 +124,9 @@ const Column = (props) => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#">Dodaj zadanie</Dropdown.Item>
+                                {/* <Dropdown.Item href="#">Dodaj zadanie</Dropdown.Item> */}
                                 <Dropdown.Item onClick={toggleModal}>Usuń kolumnę</Dropdown.Item>
-                                <Dropdown.Item href="#">Something else</Dropdown.Item>
+                                {/* <Dropdown.Item href="#">Something else</Dropdown.Item> */}
                             </Dropdown.Menu>
                         </Dropdown>
                         </div>
@@ -120,11 +154,32 @@ const Column = (props) => {
                             )
                         })}
                     </Container>   
+                    
+                    {isShowAddNewCard === true &&
+                        <div className="new-card">
+                            <textarea 
+                                rows="2"
+                                className="form-control"    
+                                placeholder="Wpisz nazwę zadania..."    
+                                ref={textAreaRef}
+                                value={valuetextArea}
+                                onChange={(event) => setValueTextArea(event.target.value)}
+                            >
+                            </textarea>
+                            <div>
+                                <button className="add-button" onClick={()=> handleAddNewCard()}>Dodaj</button>
+                                <i className="fa fa-times close" onClick={()=> setIsShowAddNewCard(false)}/>
+                            </div>
+                        </div>
+                    }
                     </div>
+                    {isShowAddNewCard === false &&
                     <footer>
-                        <div className="footer-action"></div>
-                        <i className="fa fa-plus icon"></i> Dodaj kolejne zadanie
+                        <div className="footer-action"onClick={()=> setIsShowAddNewCard(true)}>
+                            <i className="fa fa-plus icon"></i> Dodaj kolejne zadanie
+                        </div>
                     </footer>
+                    }
                 </div>
                 <ConfirmModal
                     show={isShowModalDelete}

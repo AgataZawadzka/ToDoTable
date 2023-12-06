@@ -18,7 +18,7 @@
     border-radius: 8px;
     padding: 1em;
     height: fit-content;
-    max-height: calc(100vh - 215px);
+    max-height: calc(100vh - 185px);
     margin: 0 1em 0 0;
   }
 
@@ -42,6 +42,15 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  .column-title{
+    border:none;
+  }
+
+  .column-title input{
+    font-size: 1em;
+    border:none;
   }
 
   .column footer{
@@ -99,6 +108,7 @@
 
   .add-new-column{
     width: 250px;
+    height: fit-content;
     line-height: 32px;
     padding: 0.5em 1em;
     cursor: pointer;
@@ -117,6 +127,7 @@
     display: flex;
     gap: 0.5em;
     width: 250px;
+    height: fit-content;
     padding: 2em 1em 1em 1em;
     color:white;
     background-color: #ffffff1f;
@@ -141,4 +152,27 @@
     right: 0.5em;
     transition-duration: 0.3s;
     cursor: pointer;
+  }
+
+  .new-card{
+    width: 95%;
+    padding-top: 1em;
+    padding-left: 0.3em;
+    color:white;
+    transition-duration: 0.5s;
+    border-radius: 8px;
+  }
+
+  .new-card div{
+    position: relative;
+    padding-top: 0.8em;
+  }
+
+  .new-card .close{
+    position: absolute;
+    top: 1.5em;
+    right: 0.5em;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color:#8c8c8c;
   }

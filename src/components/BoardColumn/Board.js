@@ -130,7 +130,7 @@ const Board = () => {
                         </Draggable>
                     )
                 })}
-
+            </Container>
                 {isShowAddColumn === false ? 
                         <div className="add-new-column" onClick={() => setIsShowAddColumn(true)}>
                         <i className="fa fa-plus icon"></i> Dodaj kolejną kolumne
@@ -139,7 +139,7 @@ const Board = () => {
                     <div className="content-add-column">
                         <input type="text" 
                             className="form-control" 
-                            placeholder="Nazwa kolumny" 
+                            placeholder="Nazwa kolumny..." 
                             ref={inputRef}
                             value={valueInput}
                             onChange={(event)=> setValueInput(event.target.value)}
@@ -150,7 +150,6 @@ const Board = () => {
                         </div>
                     </div>
                 }
-            </Container>
             </div>
         </>
         
