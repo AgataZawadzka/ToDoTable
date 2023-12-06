@@ -28,14 +28,20 @@
     font-weight: 600;
   }
 
-  .column header::after{
-    content: '';
-    position: absolute;
-    background: url(../../../src/drag.png) no-repeat;
-    background-size: 16px;
-    width: 16px;
-    height: 16px;
-    right: 0;
+  // .column header::after{
+  //   content: '';
+  //   position: absolute;
+  //   background: url(../../../src/drag.png) no-repeat;
+  //   background-size: 16px;
+  //   width: 16px;
+  //   height: 16px;
+  //   right: 0;
+  // }
+
+  .column-drag-handle{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   .column footer{
