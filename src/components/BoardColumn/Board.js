@@ -5,7 +5,7 @@ import { initData } from '../../actions/initData';
 import { useState, useEffect, useRef } from "react";
 import _ from 'lodash';
 import {mapOrder} from '../sorts.js';
-import { Draggable, Droppable} from 'react-drag-and-drop'
+import { Container, Draggable } from 'react-smooth-dnd';
 import { applyDrag } from "../dragDrop.js";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -106,7 +106,7 @@ const Board = () => {
         <>
             <div class="columns">
 
-            <Droppable
+            <Container
                 orientation="horizontal"
                 onDrop={onColumnDrop}
                 getChildPayload={index => columns[index]} 
@@ -130,7 +130,7 @@ const Board = () => {
                         </Draggable>
                     )
                 })}
-            </Droppable>
+            </Container>
                 {isShowAddColumn === false ? 
                         <div className="add-new-column" onClick={() => setIsShowAddColumn(true)}>
                         <i className="fa fa-plus icon"></i> Dodaj kolejną kolumne
