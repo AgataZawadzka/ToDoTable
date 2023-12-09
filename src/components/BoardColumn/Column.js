@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import './Board.scss';
 import { mapOrder } from "../sorts";
-import { Container, Draggable } from "react-smooth-dnd";
+import { Draggable, Droppable } from 'react-drag-and-drop'
 import Dropdown from 'react-bootstrap/Dropdown';
 import ConfirmModal from "../Common/Modal";
 import Form from 'react-bootstrap/Form';
@@ -132,7 +132,7 @@ const Column = (props) => {
                         </div>
                     </header>
                     <div className="card-list">
-                    <Container
+                    <Droppable
                     groupName="col"
                     onDrop={(dropResult) => onCardDrop(dropResult, column.id)}
                     getChildPayload={index => cards[index]}
@@ -153,7 +153,7 @@ const Column = (props) => {
                                 </Draggable>
                             )
                         })}
-                    </Container>   
+                    </Droppable>   
                     
                     {isShowAddNewCard === true &&
                         <div className="new-card">
