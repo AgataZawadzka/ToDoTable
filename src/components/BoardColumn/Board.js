@@ -9,6 +9,7 @@ import { Container, Draggable } from 'react-smooth-dnd';
 import { applyDrag } from "../dragDrop.js";
 import { v4 as uuidv4 } from 'uuid';
 
+
 const Board = () => {
     const [board, setBoard] = useState({});
     const [columns, setColumns] = useState([]);

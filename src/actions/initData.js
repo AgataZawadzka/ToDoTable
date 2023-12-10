@@ -14,19 +14,19 @@ export const initData = {
                             id: 'card-1',
                             boardId: 'board-1',
                             columnId: 'column-1',
-                            title: 'Title of card 1',
+                            title: 'Zadanie 1',
                         },
                         {
                             id: 'card-2',
                             boardId: 'board-1',
                             columnId: 'column-1',
-                            title: 'Title of card 2',
+                            title: 'Zadanie 2',
                         },
                         {
                             id: 'card-3',
                             boardId: 'board-1',
                             columnId: 'column-1',
-                            title: 'Title of card 3',
+                            title: 'Zadanie 3',
                         }
                     ]
                 },
@@ -40,59 +40,59 @@ export const initData = {
                             id: 'card-4',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 4',
+                            title: 'Zadanie 1',
                         },
                         {
                             id: 'card-5',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 5',
+                            title: 'Zadanie 2',
                         },
                         {
                             id: 'card-6',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 6',
+                            title: 'Zadanie 3',
                         },
                         {
                             id: 'card-7',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 7',
+                            title: 'Zadanie 4',
                         },
 
                         {
                             id: 'card-8',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 8',
+                            title: 'Zadanie 5',
                         },
 
                         {
                             id: 'card-9',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 9',
+                            title: 'Zadanie 6',
                         },
 
                         {
                             id: 'card-10',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 10',
+                            title: 'Zadanie 7',
                         },
 
                         {
                             id: 'card-11',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 11',
+                            title: 'Zadanie 8',
                         },
                         {
                             id: 'card-12',
                             boardId: 'board-1',
                             columnId: 'column-2',
-                            title: 'Title of card 12',
+                            title: 'Zadanie 9',
                         }
                         
                     ]
@@ -107,13 +107,13 @@ export const initData = {
                             id: 'card-8',
                             boardId: 'board-1',
                             columnId: 'column-3',
-                            title: 'Title of card 8',
+                            title: 'Zadanie 1',
                         },
                         {
                             id: 'card-9',
                             boardId: 'board-1',
                             columnId: 'column-3',
-                            title: 'Title of card 9',
+                            title: 'Zadanie 2',
                         }
                     ]
                 }

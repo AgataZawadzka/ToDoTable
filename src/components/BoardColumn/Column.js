@@ -8,6 +8,7 @@ import ConfirmModal from "../Common/Modal";
 import Form from 'react-bootstrap/Form';
 import { MODAL_ACTION_CLOSE, MODAL_ACTION_CONFIRM } from '../constant';
 import { v4 as uuidv4 } from 'uuid';
+// import {firebase} from "./firebase/firebase.js"
 
 const Column = (props) => {
 
